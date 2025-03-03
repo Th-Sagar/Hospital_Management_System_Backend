@@ -24,6 +24,4 @@ public class AppointmentController {
         return appointmentsRepository.findAll();
     }
 
-
-
 }
