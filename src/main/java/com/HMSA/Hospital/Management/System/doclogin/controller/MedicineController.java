@@ -34,4 +34,15 @@ public class MedicineController {
      Medicine medicine=   medicineRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Medicine not found of this id: "+ id));
         return new ResponseEntity<>(medicine, HttpStatus.OK);
     }
+
+    @PutMapping("/medicines/{id}")
+    public ResponseEntity<Medicine> updateMedicine(@PathVariable long id, @RequestBody Medicine medicineDetail) throws AttributeNotFoundException {
+        Medicine medicine=   medicineRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Medicine not found of this id: "+ id));
+        medicine.setDrugName(medicineDetail.getDrugName());
+        medicine.setStock(medicineDetail.getStock());
+
+        medicineRepository.save(medicine);
+        return new ResponseEntity<>(medicine,HttpStatus.OK);
+
+    }
 }
