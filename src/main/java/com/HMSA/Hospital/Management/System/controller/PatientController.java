@@ -42,8 +42,7 @@ public class PatientController {
       return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
-
-
+    
     @PutMapping("/patients/{id}")
     public ResponseEntity<Patient> updatePatientById(@PathVariable long id, @RequestBody Patient patientDetail) throws AttributeNotFoundException {
         Patient patient =  patientsRepository.findById(id).orElseThrow(()->
@@ -61,8 +60,6 @@ public class PatientController {
 
     }
 
-
-
     @GetMapping("/patients/{id}")
     public ResponseEntity<Patient> getPatientById(@PathVariable long id) throws AttributeNotFoundException {
 
@@ -70,6 +67,4 @@ public class PatientController {
        return new ResponseEntity<>(patient,HttpStatus.OK);
 
     }
-
-
 }
