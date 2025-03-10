@@ -1,0 +1,11 @@
+com\HMSA\Hospital\Management\System\doclogin\repository\MedicineRepository.class
+com\HMSA\Hospital\Management\System\controller\HealthController.class
+com\HMSA\Hospital\Management\System\doclogin\controller\AppointmentController.class
+com\HMSA\Hospital\Management\System\controller\PatientController.class
+com\HMSA\Hospital\Management\System\doclogin\controller\MedicineController.class
+com\HMSA\Hospital\Management\System\HospitalManagementSystemApplication.class
+com\HMSA\Hospital\Management\System\repository\PatientsRepository.class
+com\HMSA\Hospital\Management\System\doclogin\enity\Medicine.class
+com\HMSA\Hospital\Management\System\doclogin\repository\AppointmentsRepository.class
+com\HMSA\Hospital\Management\System\entity\Patient.class
+com\HMSA\Hospital\Management\System\doclogin\enity\Appointment.class
