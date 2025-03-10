@@ -1,36 +1,22 @@
 package com.HMSA.Hospital.Management.System.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="patients")
+@Document(collection = "patients")
 public class Patient {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private String id;  // MongoDB uses String for the ObjectId field
 
-    @Column(name = "first_name")
     private String name;
-
-    @Column(name = "age")
     private String age;
-
-    @Column(name = "blood_group")
     private String blood;
-
-    @Column(name = "prescription")
     private String prescription;
-
-    @Column(name = "dose")
     private String dose;
-
-    @Column(name = "fees")
     private String fees;
-
-    @Column(name = "urgency")
     private String urgency;
 
-    public Patient(long id, String name, String age, String blood, String prescription, String dose, String fees, String urgency) {
+    public Patient(String id, String name, String age, String blood, String prescription, String dose, String fees, String urgency) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -41,16 +27,15 @@ public class Patient {
         this.urgency = urgency;
     }
 
-    public Patient(){
+    public Patient() {
         super();
     }
 
-
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

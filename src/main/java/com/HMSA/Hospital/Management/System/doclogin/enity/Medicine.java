@@ -1,32 +1,34 @@
 package com.HMSA.Hospital.Management.System.doclogin.enity;
 
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "medicines")
+@Document(collection = "medicines")
 public class Medicine {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private String id;  // MongoDB uses String for ObjectId
 
-    @Column(name = "drug_name")
     private String drugName;
 
     private String stock;
 
-    public Medicine(long id, String drugName, String stock) {
+    public Medicine(String id, String drugName, String stock) {
         this.id = id;
         this.drugName = drugName;
         this.stock = stock;
     }
 
-    public long getId() {
+    public Medicine() {
+        super();
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -44,9 +46,5 @@ public class Medicine {
 
     public void setStock(String stock) {
         this.stock = stock;
-    }
-
-    public Medicine(){
-        super();
     }
 }

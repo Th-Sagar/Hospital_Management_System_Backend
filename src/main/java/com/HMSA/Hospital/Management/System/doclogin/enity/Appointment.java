@@ -1,14 +1,14 @@
 package com.HMSA.Hospital.Management.System.doclogin.enity;
 
-import jakarta.persistence.*;
 
-@Entity
-@Table(name = "appointments")
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "appointments")
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private String id;  // MongoDB uses String for ObjectId
 
     private String name;
 
@@ -18,7 +18,7 @@ public class Appointment {
 
     private String number;
 
-    public Appointment(long id, String name, String age, String symptoms, String number) {
+    public Appointment(String id, String name, String age, String symptoms, String number) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -26,15 +26,15 @@ public class Appointment {
         this.number = number;
     }
 
-    public Appointment(){
+    public Appointment() {
         super();
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
