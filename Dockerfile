@@ -5,7 +5,7 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 # Copy the application JAR file from the target directory
-COPY target/*.jar app.jar
+COPY target/Hospital-Management-System-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port 9090
 EXPOSE 9090
