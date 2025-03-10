@@ -10,8 +10,17 @@ public class HospitalManagementSystemApplication {
 	public static void main(String[] args) {
 
 		Dotenv dot = Dotenv.load();
-		System.setProperty("DB_URL",dot.get("DB_URL"));
-		System.setProperty("DB_DATABASE",dot.get("DB_DATABASE"));
+
+		String dbUrl= dot.get("DB_URL");
+		String dbDatabase = dot.get("DB_DATABASE");
+
+		System.out.println("DB_URL: " + dbUrl);
+		System.out.println("DB_DATABASE: " + dbDatabase);
+
+		System.setProperty("DB_URL", dbUrl);
+		System.setProperty("DB_DATABASE", dbDatabase);
+
+
 		SpringApplication.run(HospitalManagementSystemApplication.class, args);
 	}
 

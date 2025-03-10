@@ -1,14 +1,14 @@
-# Use an official Java 21 runtime as a base image
-FROM eclipse-temurin:21-jdk
+# Use OpenJDK 21 as the base image
+FROM openjdk:21-jdk-slim
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the application JAR file from the target directory
+# Copy the JAR file into the container
 COPY target/Hospital-Management-System-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port 9090
+# Expose the port the application will run on
 EXPOSE 9090
 
 # Run the application
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

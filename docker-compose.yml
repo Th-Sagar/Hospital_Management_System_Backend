@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  hospital-app:
+    image: hospital-management:latest  # Use the built image name
+    container_name: hospital_container
+    restart: always
+    env_file:
+      - .env  # Load environment variables from .env file
+    ports:
+      - "9090:9090"
