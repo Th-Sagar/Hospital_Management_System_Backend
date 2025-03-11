@@ -32,13 +32,13 @@ public class MedicineController {
     }
 
     @GetMapping("/medicines/{id}")
-    public ResponseEntity<Medicine> getMedicineById(@PathVariable long id) throws AttributeNotFoundException {
+    public ResponseEntity<Medicine> getMedicineById(@PathVariable String id) throws AttributeNotFoundException {
      Medicine medicine=   medicineRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Medicine not found of this id: "+ id));
         return new ResponseEntity<>(medicine, HttpStatus.OK);
     }
 
     @PutMapping("/medicines/{id}")
-    public ResponseEntity<Medicine> updateMedicine(@PathVariable long id, @RequestBody Medicine medicineDetail) throws AttributeNotFoundException {
+    public ResponseEntity<Medicine> updateMedicine(@PathVariable String id, @RequestBody Medicine medicineDetail) throws AttributeNotFoundException {
         Medicine medicine=   medicineRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Medicine not found of this id: "+ id));
         medicine.setDrugName(medicineDetail.getDrugName());
         medicine.setStock(medicineDetail.getStock());
@@ -49,7 +49,7 @@ public class MedicineController {
     }
 
     @DeleteMapping("/medicines/{id}")
-    public ResponseEntity<Map<String,Boolean>> deleteMedicine(@PathVariable long id) throws AttributeNotFoundException {
+    public ResponseEntity<Map<String,Boolean>> deleteMedicine(@PathVariable String id) throws AttributeNotFoundException {
         Medicine medicine=   medicineRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Medicine not found of this id: "+ id));
         medicineRepository.delete(medicine);
         Map<String,Boolean> response = new HashMap<String,Boolean>();

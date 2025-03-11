@@ -31,7 +31,7 @@ public class AppointmentController {
     }
 
     @DeleteMapping("/appointments/{id}")
-    public ResponseEntity<Map<String,Boolean>> deleteAppointment(@PathVariable long id) throws AttributeNotFoundException {
+    public ResponseEntity<Map<String,Boolean>> deleteAppointment(@PathVariable String id) throws AttributeNotFoundException {
 
        Appointment appointment= appointmentsRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Appointment Not Found With ID"));
        appointmentsRepository.delete(appointment);

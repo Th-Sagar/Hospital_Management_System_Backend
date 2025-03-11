@@ -32,7 +32,7 @@ public class PatientController {
     }
 
     @DeleteMapping("/patients/{id}")
-    public ResponseEntity<Map<String,Boolean>> deletePatient(@PathVariable long id) throws AttributeNotFoundException {
+    public ResponseEntity<Map<String,Boolean>> deletePatient(@PathVariable String id) throws AttributeNotFoundException {
       Patient patient =  patientsRepository.findById(id).orElseThrow(()->
                 new AttributeNotFoundException("Patient not found with id:"+ id));
       patientsRepository.delete(patient);
@@ -44,7 +44,7 @@ public class PatientController {
     }
     
     @PutMapping("/patients/{id}")
-    public ResponseEntity<Patient> updatePatientById(@PathVariable long id, @RequestBody Patient patientDetail) throws AttributeNotFoundException {
+    public ResponseEntity<Patient> updatePatientById(@PathVariable String id, @RequestBody Patient patientDetail) throws AttributeNotFoundException {
         Patient patient =  patientsRepository.findById(id).orElseThrow(()->
                 new AttributeNotFoundException("Patient not found with id:"+ id));
 
@@ -61,7 +61,7 @@ public class PatientController {
     }
 
     @GetMapping("/patients/{id}")
-    public ResponseEntity<Patient> getPatientById(@PathVariable long id) throws AttributeNotFoundException {
+    public ResponseEntity<Patient> getPatientById(@PathVariable String id) throws AttributeNotFoundException {
 
        Patient patient= patientsRepository.findById(id).orElseThrow(()-> new AttributeNotFoundException("Patient not found with id "+id));
        return new ResponseEntity<>(patient,HttpStatus.OK);
