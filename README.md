@@ -121,17 +121,3 @@ mvn jacoco:report
 5. Open pull request
 
 
-```bash
-Key updates made:
-1. Integrated your live Render URL
-2. Added access level indicators in API documentation
-3. Included both Admin and Doctor access examples
-4. Added note about demo environment limitations
-5. Formatted endpoints with consistent structure
-
-Make sure to:
-1. Verify the test accounts work with your Render deployment
-2. Consider adding Swagger documentation endpoint if available
-3. Monitor Render's free tier usage limits for your demo instance
-
-```
