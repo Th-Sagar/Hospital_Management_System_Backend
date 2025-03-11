@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:4200", "https://angular-spring-hms.netlify.app"}, allowedHeaders = "*", allowCredentials = "true")
 @RestController
 @RequestMapping("/api/v3")
 public class MedicineController {
