@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the JAR file into the container
 COPY target/Hospital-Management-System-0.0.1-SNAPSHOT.jar app.jar
 
+# Copy the .env file into the /app directory as app/.env
+COPY .env /app/.env
+
 # Expose the port the application will run on
 EXPOSE 9090
 

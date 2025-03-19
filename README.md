@@ -20,7 +20,7 @@ API server for hospital operations management with role-based access control (Ad
 | **Medicine Inventory** | CRUD operations with stock tracking |
 
 ## Live Demo
-**Base API URL:** [https://hospital-management-system-backend-pkob.onrender.com](https://hospital-management-system-backend-pkob.onrender.com)
+**Base API URL:** [https://hms-xqmn.onrender.com](https://hms-xqmn.onrender.com)
 
 ### Example Requests
 ```bash
